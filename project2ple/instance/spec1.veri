@@ -1,0 +1,18 @@
+defmodule TestModule
+
+  using MathLib
+
+  defspace Reals end
+  defspace Integers < Reals end
+
+  defvar x : Reals, y : Reals, n : Integers end
+
+  defoperator plus : Reals -> Reals -> Reals end
+  defoperator times : Reals -> Reals -> Reals [commutative: true] end
+
+  defexpression x + y end
+
+  defrule (plus x y) -> (plus y x) end
+  defrule (times x y) -> (times y x) end
+
+end
